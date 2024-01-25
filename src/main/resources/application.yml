@@ -1,0 +1,27 @@
+##### GENERAL #####
+server:
+  servlet:
+    context-path: /bootcam
+
+logging:
+  pattern:
+    dateformat: hh:mm
+  level:
+    org:
+      hibernate:
+        sql: debug
+
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:mysql://localhost/bootcam
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
