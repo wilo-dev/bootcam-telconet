@@ -1,17 +1,19 @@
 package ec.telconet.mscompproofwilliamenriquez.product.entity.model;
 
+import ec.telconet.mscompproofwilliamenriquez.util.entity.AuditableEntity;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "products")
-public class ProductEntity implements Serializable {
+public class ProductEntity extends AuditableEntity {
 
     private static final long serialVersionUID = 1L;
 
@@ -19,7 +21,8 @@ public class ProductEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String product_name;
+    @Column(name = "product_name")
+    private String productName;
 
     private Integer amount;
 
@@ -28,21 +31,4 @@ public class ProductEntity implements Serializable {
     private String image;
 
     private Boolean status = true;
-
-
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "created_at")
-    private Date createdAt;
-
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "updated_at")
-    private Date updatedAt;
-
-    @PrePersist
-    public void prePersist() {
-        createdAt = new Date();
-        updatedAt = new Date();
-    }
 }

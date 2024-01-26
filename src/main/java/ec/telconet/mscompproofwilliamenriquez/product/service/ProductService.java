@@ -32,7 +32,7 @@ public class ProductService {
 
     public ProductEntity updateProduct(Long id, ProductEntity updatedProduct) {
         ProductEntity existingProduct = getProduct(id);
-        existingProduct.setProduct_name(updatedProduct.getProduct_name());
+        existingProduct.setProductName(updatedProduct.getProductName());
         existingProduct.setAmount(updatedProduct.getAmount());
         existingProduct.setPrice(updatedProduct.getPrice());
         existingProduct.setImage(updatedProduct.getImage());

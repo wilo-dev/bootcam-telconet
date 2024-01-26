@@ -1,13 +1,8 @@
-insert into users (username, password, email, status, created_at, updated_at) values ('Gabe', 'gW8{Ap}Oo/(Ok1?', 'ggregoratti0@elpais.com', false, '2023-09-17', '2023-02-24');
-insert into users (username, password, email, status, created_at, updated_at) values ('Kathy', 'nO8"=e_<`v/@S', 'kmish1@ehow.com', true, '2023-04-07', '2023-12-11');
-insert into users (username, password, email, status, created_at, updated_at) values ('Lind', 'qO4#zW4fc75F', 'lhurlin2@domainmarket.com', true, '2023-09-02', '2023-01-27');
-insert into users (username, password, email, status, created_at, updated_at) values ('Boigie', 'xK5nuK)`9', 'bsecombe3@salon.com', false, '2023-04-13', '2024-01-21');
-insert into users (username, password, email, status, created_at, updated_at) values ('Benedikta', 'mB5*`659T!l=n6', 'bfilinkov4@geocities.com', false, '2023-08-29', '2023-07-01');
-insert into users (username, password, email, status, created_at, updated_at) values ('Dulce', 'oC6=8#Bf', 'dbill5@github.io', false, '2023-09-12', '2023-02-25');
-insert into users (username, password, email, status, created_at, updated_at) values ('Cameron', 'kF1.,_v<Z{', 'cslarke6@fc2.com', false, '2023-02-24', '2024-01-15');
-insert into users (username, password, email, status, created_at, updated_at) values ('Osmond', 'dP8==j(`ytX1', 'otinto7@technorati.com', true, '2023-06-03', '2023-02-13');
-insert into users (username, password, email, status, created_at, updated_at) values ('Roberto', 'yM7/uwl4n', 'rnare8@xing.com', false, '2023-04-04', '2023-10-07');
-insert into users (username, password, email, status, created_at, updated_at) values ( 'Blondie', 'lB4~=GW9Awlo@u"', 'bclibbery9@alibaba.com', false, '2023-06-09', '2023-10-30');
+insert into users (name, lastname, username, password, email, status, admin, created_at, updated_at) values ('Verla', 'Franzman', 'vfranzman0@earthlink.net', 'yR0"B{E''', 'vfranzman0@jugem.jp', 'a', false, '2023-03-02', '2023-10-16');
+insert into users (name, lastname, username, password, email, status, admin, created_at, updated_at) values ('Abramo', 'Brumby', 'abrumby1@bing.com', 'lW3>*r=kLP@$', 'abrumby1@bloglovin.com', 'a', true, '2023-03-02', '2023-10-16');
+insert into users (name, lastname, username, password, email, status, admin, created_at, updated_at) values ('Nananne', 'Hunnam', 'nhunnam2@about.com', 'vG7`,qS', 'nhunnam2@nasa.gov', "i", false, '2023-03-02', '2023-10-16');
+insert into users (name, lastname, username, password, email, status, admin, created_at, updated_at) values ('Hazel', 'Dilger', 'hdilger3@domainmarket.com', 'bI0_0MsoX%w%kZp', 'hdilger3@fastcompany.com', "e", true, '2023-03-02', '2023-10-16');
+insert into users (name, lastname, username, password, email, status, admin, created_at, updated_at) values ('Josy', 'Posselow', 'jposselow4@japanpost.jp', 'bP7|#G>pTD>6W', 'jposselow4@slideshare.net', "e", true, '2023-03-02', '2023-10-16');
 
 
 
