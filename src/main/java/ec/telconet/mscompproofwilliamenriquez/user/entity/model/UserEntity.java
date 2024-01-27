@@ -1,28 +1,19 @@
 package ec.telconet.mscompproofwilliamenriquez.user.entity.model;
 
+import ec.telconet.mscompproofwilliamenriquez.user.entity.request.userRequest;
 import ec.telconet.mscompproofwilliamenriquez.util.entity.AuditableEntity;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.*;
 
-import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "users")
 public class UserEntity extends AuditableEntity {
-
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false, unique = true)
-    private Long id;
 
     @Column(name = "name", nullable = false, length = 50)
     private String nombre;
@@ -33,7 +24,7 @@ public class UserEntity extends AuditableEntity {
     @Column(name = "username", nullable = false, length = 50)
     private String usuario;
 
-    @Column(name = "password", nullable = false, length = 50)
+    @Column(name = "password", nullable = false)
     private String clave;
 
     @Column(name = "email", nullable = false, length = 50)
@@ -45,5 +36,24 @@ public class UserEntity extends AuditableEntity {
     @Column(name = "admin", nullable = false)
     private Boolean administrator;
 
+
+    public UserEntity(userRequest data) {
+        this.nombre = data.getNombreUsuario();
+        this.apellido = data.getApellidoUsuario();
+        this.usuario = data.getUsuario();
+        this.clave = data.getClave();
+        this.correo = data.getCorreo();
+        this.estado = 'A';
+        this.administrator = false;
+    }
+
+    public void actualizarDatos(userRequest data) {
+        this.nombre = data.getNombreUsuario();
+        this.apellido = data.getApellidoUsuario();
+        this.usuario = data.getUsuario();
+        this.clave = data.getClave();
+        this.correo = data.getCorreo();
+        this.setUpdatedAt(new Date());
+    }
 
 }

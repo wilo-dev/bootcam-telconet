@@ -1,19 +1,20 @@
 package ec.telconet.mscompproofwilliamenriquez.user.entity.request;
 
-import ec.telconet.mscompproofwilliamenriquez.user.entity.model.UserEntity;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class CreateUserRequest {
+@AllArgsConstructor
+@NoArgsConstructor
+public class userRequest {
+
     private String nombreUsuario;
     private String apellidoUsuario;
     private String usuario;
     private String clave;
     private String correo;
-    private Character estado;
-    private Boolean administrador;
+//    private Character estado;
+//    private Boolean administrador;
 
-    public CreateUserRequest() {
-
-    }
 }

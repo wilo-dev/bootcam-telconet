@@ -11,7 +11,14 @@ import java.util.Date;
 @Getter
 @Setter
 public class AuditableEntity implements Serializable {
-    
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false, unique = true)
+    private Long id;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "created_at")
     private Date createdAt;

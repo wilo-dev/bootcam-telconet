@@ -12,6 +12,8 @@ logging:
         sql: debug
 
 spring:
+  profiles:
+    active: dev
   main:
     banner-mode: off
   datasource:
@@ -24,4 +26,13 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+ec:
+  message: "Hola mundo spring boot"
+  secret-key-password: 5uP3r53cR37k3yPW
 
+---
