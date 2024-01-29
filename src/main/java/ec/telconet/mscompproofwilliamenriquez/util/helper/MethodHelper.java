@@ -1,7 +1,10 @@
 package ec.telconet.mscompproofwilliamenriquez.util.helper;
 
+import ec.telconet.mscompproofwilliamenriquez.user.entity.model.UserEntity;
+import ec.telconet.mscompproofwilliamenriquez.user.entity.request.UserRequest;
 import ec.telconet.mscompproofwilliamenriquez.util.enums.MessageEnum;
 import ec.telconet.mscompproofwilliamenriquez.util.exception.MyException;
+import org.jose4j.jwa.AlgorithmConstraints;
 import org.jose4j.jwe.ContentEncryptionAlgorithmIdentifiers;
 import org.jose4j.jwe.JsonWebEncryption;
 import org.jose4j.jwe.KeyManagementAlgorithmIdentifiers;
@@ -9,6 +12,7 @@ import org.jose4j.keys.AesKey;
 import org.jose4j.lang.JoseException;
 import org.springframework.http.HttpStatus;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -100,4 +104,27 @@ public class MethodHelper {
             throw new MyException(MessageEnum.INTERNAL_ERROR.getCode(), MessageEnum.INTERNAL_ERROR.getMensaje());
         }
     }
+
+    /*
+     * Método: desencripta la contraseña del usuario con una secret key
+     */
+    public static String desencryptPass(String encryptPass, String secretKey) throws MyException {
+        try {
+            JsonWebEncryption jwe = new JsonWebEncryption();
+            jwe.setAlgorithmConstraints(
+                    new AlgorithmConstraints(AlgorithmConstraints.ConstraintType.PERMIT, KeyManagementAlgorithmIdentifiers.A128GCMKW));
+            jwe.setContentEncryptionAlgorithmConstraints(new AlgorithmConstraints(AlgorithmConstraints.ConstraintType.PERMIT,
+                    ContentEncryptionAlgorithmIdentifiers.AES_128_GCM));
+            jwe.setKey(new AesKey(secretKey.getBytes()));
+            jwe.setCompactSerialization(encryptPass);
+            // System.out.println("Payload: ");
+            return jwe.getPayload();
+        } catch (JoseException e) {
+            throw new MyException(MessageEnum.NOT_ENCRYPT.getCode(), MessageEnum.NOT_ENCRYPT.getMensaje());
+        } catch (Exception e) {
+            throw new MyException(MessageEnum.INTERNAL_ERROR.getCode(), MessageEnum.INTERNAL_ERROR.getMensaje());
+        }
+    }
+
+
 }

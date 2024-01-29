@@ -1,6 +1,6 @@
 package ec.telconet.mscompproofwilliamenriquez.user.entity.model;
 
-import ec.telconet.mscompproofwilliamenriquez.user.entity.request.userRequest;
+import ec.telconet.mscompproofwilliamenriquez.user.entity.request.UserRequest;
 import ec.telconet.mscompproofwilliamenriquez.util.entity.AuditableEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -37,7 +37,7 @@ public class UserEntity extends AuditableEntity {
     private Boolean administrator;
 
 
-    public UserEntity(userRequest data) {
+    public UserEntity(UserRequest data) {
         this.nombre = data.getNombreUsuario();
         this.apellido = data.getApellidoUsuario();
         this.usuario = data.getUsuario();
@@ -47,7 +47,7 @@ public class UserEntity extends AuditableEntity {
         this.administrator = false;
     }
 
-    public void actualizarDatos(userRequest data) {
+    public void actualizarDatos(UserRequest data) {
         this.nombre = data.getNombreUsuario();
         this.apellido = data.getApellidoUsuario();
         this.usuario = data.getUsuario();

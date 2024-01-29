@@ -10,7 +10,9 @@ public enum MessageEnum {
     CREATE("Creación exitosa", 201),
     INTERNAL_ERROR("Problema en la transacción", 500),
     NOT_FOUND("No se encontraron resultados", 404),
+    LOGIN_ERROR("Usuario o clave incorrecto", 404),
     CORREO_NO_VALIDO("Ingrese un correo válido.", 403),
+    USERNAME_UNICO("Ya existe ese usuario, ingrese otro", 403),
     UPPER_CASE("Ingrese el Nombre en mayúscula.", 403),
     NOT_STRONG_PASS("Su contraseña no es segura", 403),
     NOT_ENCRYPT("Hubo un conflicto", 409);;

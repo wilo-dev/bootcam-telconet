@@ -1,12 +1,14 @@
 package ec.telconet.mscompproofwilliamenriquez.util.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import ec.telconet.mscompproofwilliamenriquez.leccion.entity.response.ProductoResponse;
 import ec.telconet.mscompproofwilliamenriquez.util.enums.MessageEnum;
 import ec.telconet.mscompproofwilliamenriquez.util.helper.MethodHelper;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class OutputEntity<T> {

@@ -1,8 +1,9 @@
-##### GENERAL #####
+spring:
+  profiles:
+    active: dev
 server:
   servlet:
     context-path: /bootcam
-
 logging:
   pattern:
     dateformat: hh:mm
@@ -10,10 +11,11 @@ logging:
     org:
       hibernate:
         sql: debug
-
+---
 spring:
-  profiles:
-    active: dev
+  config:
+    activate:
+      on-profile: dev
   main:
     banner-mode: off
   datasource:
@@ -26,13 +28,25 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
----
-spring:
-  config:
-    activate:
-      on-profile: dev
+
 ec:
   message: "Hola mundo spring boot"
   secret-key-password: 5uP3r53cR37k3yPW
 
+menu:
+  options:
+    - profile
+    - address
+    - contact
+    - logout
+
+product-api:
+  url: https://dummyjson.com/products
 ---
+spring:
+  config:
+    activate:
+      on-profile: prd
+ec:
+  message: "Hola mundo prd"
+  secret-key-password: 5uP3r53cR37k3yPW
